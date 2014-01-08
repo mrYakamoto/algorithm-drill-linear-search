@@ -2,6 +2,9 @@
  
 ##Learning Competencies 
 
+* Search a Data Structure
+* Implement standard algorithms
+
 ##Summary 
 
  In computer science, there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
@@ -16,9 +19,9 @@ Linear search (also called *sequential* search) is an algorithm for finding a pa
 
 Source: [Practical Programming](http://pragprog.com/book/gwpy/practical-programming)
 
-## Objectives
 
-### Basic linear search
+##Releases
+###Release 0 : Basic linear search
 
 Write a method `linear_search` that takes two arguments: an object and an array.
 
@@ -35,7 +38,7 @@ linear_search(9, random_numbers)
 
 Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]`.  You will have to use of the keywords `for`, `while`, or `until`.
 
-### Global linear search
+###Release 1 : Global linear search
 
 Write a new method `global_linear_search` that returns an array of *all the indices* for the object it searches for.  In other words, if the object `x` is in more than one place in the array, `global_linear_search` will return an array containing the index of each occurrence of `x`.
 
@@ -46,9 +49,7 @@ global_linear_search("a", bananas_arr)
 # => [ 1, 3, 5 ]
 ``` 
 
-##Releases
-###Release 0 
 
-##Optimize Your Learning 
+<!-- ##Optimize Your Learning  -->
 
 ##Resources
