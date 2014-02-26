@@ -3,7 +3,7 @@
 ##Learning Competencies 
 
 * Search a Data Structure
-* Implement standard algorithms
+* Implement algorithms
 
 ##Summary 
 
