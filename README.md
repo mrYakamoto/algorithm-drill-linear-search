@@ -36,7 +36,7 @@ linear_search(9, random_numbers)
 # => nil
 ```
 
-Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]`.  You will have to use of the keywords `for`, `while`, or `until`.
+Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]` and `Array#length`.  You will have to use of the keywords `for`, `while`, or `until`.
 
 ###Release 1 : Global linear search
 
