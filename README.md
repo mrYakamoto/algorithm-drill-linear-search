@@ -30,7 +30,7 @@ Write a method `linear_search` that takes two arguments: an object and an array.
  * It should return the index of the object in the array by going through each element in sequence and returning the index of the first instance of the element.
  * If the object searched for does not exist in the array, it should return `nil`.
 
-Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]`.  You will have to use of the keywords `for`, `while`, or `until`.
+Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]` and `Array#length`.  You will have to use of the keywords `for`, `while`, or `until`.
 
 There are two tests already in the spec file, but you should add more to prove that your code works correctly. Are there any edge cases you need to consider? Did you hit any bugs that should have had tests?
 
