@@ -1,13 +1,13 @@
-# Algorithm Drill Linear Search 
- 
-##Learning Competencies 
+# Algorithm Drill Linear Search
+
+##Learning Competencies
 
 * Search a Data Structure
 * Implement algorithms
 
-##Summary 
+##Summary
 
- In computer science, there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
+In computer science, there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
 
 Ruby abstracts many of the lower-level functions of programming by providing us with methods like `Array#index`. You don't need to know *how* the index of an element is found, you just need to know *what* it is. In general, the fact that Ruby provides these abstractions is a Good Thing.
 
@@ -23,33 +23,28 @@ Source: [Practical Programming](http://pragprog.com/book/gwpy/practical-programm
 ##Releases
 ###Release 0 : Basic linear search
 
-Write a method `linear_search` that takes two arguments: an object and an array.
+Write a method `linear_search` that takes two arguments: an object and an array. You'll want to add tests too.
 
-- It should return the index of the object in the array by going through each element in sequence and returning the index of the first instance of the element.
-- If the object searched for does not exist in the array, it should return `nil`.
+#### Guidelines
 
-```ruby
-random_numbers = [ 6, 29, 18, 2, 72, 19, 18, 10, 37 ]
-linear_search(18, random_numbers)
-# => 2
-linear_search(9, random_numbers)
-# => nil
-```
+ * It should return the index of the object in the array by going through each element in sequence and returning the index of the first instance of the element.
+ * If the object searched for does not exist in the array, it should return `nil`.
 
-Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]`.  You will have to use of the keywords `for`, `while`, or `until`.
+Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]` and `Array#length`.  You will have to use of the keywords `for`, `while`, or `until`.
+
+There are two tests already in the spec file, but you should add more to prove that your code works correctly. Are there any edge cases you need to consider? Did you hit any bugs that should have had tests?
 
 ###Release 1 : Global linear search
 
 Write a new method `global_linear_search` that returns an array of *all the indices* for the object it searches for.  In other words, if the object `x` is in more than one place in the array, `global_linear_search` will return an array containing the index of each occurrence of `x`.
+
+Here's an example of what that might look like.
 
 ```ruby
 bananas_arr = "bananas".split(//)
 # => ["b", "a", "n", "a", "n", "a", "s"]
 global_linear_search("a", bananas_arr)
 # => [ 1, 3, 5 ]
-``` 
+```
 
-
-<!-- ##Optimize Your Learning  -->
-
-##Resources
+There are no tests for `global_linear_search` right now. Maybe the example above is a good starting point?
