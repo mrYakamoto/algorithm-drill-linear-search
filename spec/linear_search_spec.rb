@@ -1,16 +1,22 @@
 require_relative '../linear_search'
 
 describe 'linear_search' do
-  let(:sample_array) { [ 6, 29, 18, 2, 72, 19, 18, 10, 37 ] }
+  let(:symbols) { [:Q, :O, :A, :A, :C, :G, :S, :U] }
 
-  it 'should return the index of the found element' do
-    expect(linear_search(18, sample_array)).to eq(2)
+  context 'when the array contains the searched-for element' do
+    it 'returns the index of the first occurrence of the element' do
+      index_of_a = linear_search(:A, symbols)
+      expect(index_of_a).to eq 2
+    end
   end
 
-  it 'should return nil if the element cannot be found' do
-    raise "I need a test!"
+  context 'when the array does not contain the searched-for element' do
+    it 'returns nil if the element cannot be found' do
+      raise "Complete test ..."
+    end
   end
 end
+
 
 describe 'global_linear_search' do
 
