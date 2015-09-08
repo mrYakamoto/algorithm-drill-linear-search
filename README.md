@@ -48,7 +48,7 @@ We need to write our method without replying on Ruby's built in `Array` and `Enu
 
 
 ### Release 1: Global Linear Search
-```
+```ruby
 letters = "bananas".chars
 # => ["b", "a", "n", "a", "n", "a", "s"]
 global_linear_search("s", letters)
