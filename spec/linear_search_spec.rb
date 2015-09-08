@@ -1,4 +1,4 @@
-require_relative 'linear_search'
+require_relative '../linear_search'
 
 describe 'linear_search' do
   let(:sample_array) { [ 6, 29, 18, 2, 72, 19, 18, 10, 37 ] }
