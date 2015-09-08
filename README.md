@@ -1,50 +1,75 @@
-# Algorithm Drill Linear Search
+# Algorithm Drill: Linear Search
 
-##Learning Competencies
-
-* Search a Data Structure
-* Implement algorithms
-
-##Summary
-
-In computer science, there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
-
-Ruby abstracts many of the lower-level functions of programming by providing us with methods like `Array#index`. You don't need to know *how* the index of an element is found, you just need to know *what* it is. In general, the fact that Ruby provides these abstractions is a Good Thing.
-
-However, it is also useful to understand that there are many different ways to perform a simple task like finding the index of an element in a list. Aside from being important to your knowledge of theory, the searching and sorting algorithms you use will have a significant impact on your program's performance (how long it takes to execute and how much memory it uses).
-
-One of the most basic searching algorithms is the **linear search**.  In this challenge, you will build a `linear_search` method using very basic programming constructs in Ruby.
-
-Linear search (also called *sequential* search) is an algorithm for finding a particular value in a list by checking every one of its elements, one at a time and in sequence, until the desired one is found. *Source: [Wikipedia](http://en.wikipedia.org/wiki/Linear_search)*
-
-Source: [Practical Programming](http://pragprog.com/book/gwpy/practical-programming)
-
-
-##Releases
-###Release 0 : Basic linear search
-
-Write a method `linear_search` that takes two arguments: an object and an array. You'll want to add tests too.
-
-#### Guidelines
-
- * It should return the index of the object in the array by going through each element in sequence and returning the index of the first instance of the element.
- * If the object searched for does not exist in the array, it should return `nil`.
-
-Here's the catch: you can't use any of Ruby's built-in `Array` or `Enumerable` methods *except* for `Array#[]` and `Array#length`.  You will have to use of the keywords `for`, `while`, or `until`.
-
-There are two tests already in the spec file, but you should add more to prove that your code works correctly. Are there any edge cases you need to consider? Did you hit any bugs that should have had tests?
-
-###Release 1 : Global linear search
-
-Write a new method `global_linear_search` that returns an array of *all the indices* for the object it searches for.  In other words, if the object `x` is in more than one place in the array, `global_linear_search` will return an array containing the index of each occurrence of `x`.
-
-Here's an example of what that might look like.
-
+## Summary
 ```ruby
-bananas_arr = "bananas".split(//)
-# => ["b", "a", "n", "a", "n", "a", "s"]
-global_linear_search("a", bananas_arr)
-# => [ 1, 3, 5 ]
+array = [:A, :B, :A]
+# => [:A, :B, :A]
+array.index(:A)
+# => 0
+array.index(:B)
+# => 1
+array.index(:C)
+# => nil
 ```
+*Figure 1*.  Finding the index of an element in an array.
 
-There are no tests for `global_linear_search` right now. Maybe the example above is a good starting point?
+We're going to write a method that mimics the behavior of Ruby's [`Array#index`][rubydocs Array#index] method.  This method returns the index of a particular element in an array ... or `nil` if the element is not found in the array.  If the element is found more than once in the array, the index of the first occurrence is returned.  (see Figure 1)
+
+Ruby abstracts many of the lower-level functions of programming by providing us with methods like `Array#index`.  We don't need to know *how* the index of an element is found, we need to know *what* that index means and how to employ it in our programs.
+
+In general, the fact that Ruby provides these abstractions is a good thing.  However, we do want to have familiarity with how to implement some common behaviors.  We've completed other challenges where we've implemented the behaviors we see in Ruby (e.g., the [enumerable methods][implement-enumerable-challenge]).  In this challenge, we'll implement a search behavior ourselves, and we'll use a specific search algorithm:  linear search.
+
+
+### Linear Search
+We've seen in previous challenges that there are different ways to implement the same behavior, and there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
+
+One of the most basic search algorithms is the [linear search][wikipedia linear search].  This is a *brute force* algorithm where we simply check each element one-at-a-time until we find the element we're looking for or run through all of the elements without finding a match.
+
+
+## Releases
+### Release 0: Linear Search
+```ruby
+numbers = [0, 8, 5, 9, 7, 2]
+# => [0, 8, 5, 9, 7, 2]
+linear_search(7, numbers)
+# => 4
+linear_search(1, numbers)
+# => nil
+```
+*Figure 2*.  Example linear search method usage.
+
+Write a method `linear_search` that takes two arguments: an object and an array.  The method should iterate over each element in sequence and return the index where the object is first found. If the object cannot be found, the method returns `nil`.
+
+One test has been written for us.  We'll need to write more ourselves to determine whether or not our method is behaving as we expect. Are there any edge cases we need to consider? Did we hit any bugs for which we should have tests?
+
+**Restrictions**
+
+We need to write our method without replying on Ruby's built in `Array` and `Enumerble` methods.  The only methods we may call on the array we're searching are `Array#[]` and `Array#length`.  We are free to use keywords like `for`, `while`, or `until`.
+
+
+### Release 1: Global Linear Search
+```ruby
+letters = "bananas".chars
+# => ["b", "a", "n", "a", "n", "a", "s"]
+global_linear_search("s", letters)
+# => [6]
+global_linear_search("a", letters)
+# => [1, 3, 5]
+global_linear_search("z", letters)
+# => []
+```
+*Figure 3*.  Example global linear search method usage.
+
+In our `linear_search` method, we only returned the index of the first occurrence of an element.  Let's write a new `global_linear_search` method that returns an array of all the indices where the element is found.
+
+We can see example usage of this method in Figure 3.  Let's translate that desired behavior into tests and then write our method to make the tests pass.  What happens if the element is only found once?  What if it's not found?
+
+
+## Conclusion
+Linear search is one approach to searching a collection.  Let's consider our algorithm's performance.  How would it function given a very large collection to look through?  Let's say we have a collection with a million elements, how would linear search perform?
+
+
+[implement-enumerable-challenge]: ../../../implement-enumerable-challenge
+[rubydocs Array#index]: http://ruby-doc.org/core-2.1.0/Array.html#method-i-index
+[wikipedia linear search]: http://en.wikipedia.org/wiki/Linear_search
+
