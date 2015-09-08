@@ -23,8 +23,6 @@ In general, the fact that Ruby provides these abstractions is a good thing.  How
 ### Linear Search
 We've seen in previous challenges that there are different ways to implement the same behavior, and there are many different ways to search through collections of data. Understanding the various algorithms and patterns for searching and sorting data sets is an essential part of computer science.
 
-There are different ways to perform a simple task like finding the index of an element in a list. Aside from being important to your knowledge of theory, the searching and sorting algorithms you use will have a significant impact on your program's performance (how long it takes to execute and how much memory it uses).
-
 One of the most basic search algorithms is the [linear search][wikipedia linear search].  This is a *brute force* algorithm where we simply check each element one-at-a-time until we find the element we're looking for or run through all of the elements without finding a match.
 
 
