@@ -44,7 +44,7 @@ One test has been written for us.  We'll need to write more ourselves to determi
 
 **Restrictions**
 
-We need to write our method without replying on Ruby's built in `Array` and `Enumerble` methods.  The only methods we may call on the array we're searching are `Array#[]` and `Array#length`.  We are free to use keywords like `for`, `while`, or `until`.
+We need to write our method without replying on Ruby's built in `Array` and `Enumerable` methods.  The only methods we may call on the array we're searching are `Array#[]` and `Array#length`.  We are free to use keywords like `for`, `while`, or `until`.
 
 
 ### Release 1: Global Linear Search
